@@ -23,18 +23,19 @@ class TableViewController : UITableViewController, UIImagePickerControllerDelega
         super.viewWillAppear(animated)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memes = appDelegate.memes
+        self.memes = appDelegate.memes
+        
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memes.count
+        return self.memes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath : IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCellView")!
-        cell.textLabel?.text = "Prova"
         
-        cell.imageView?.image = memes[(indexPath as NSIndexPath).row].editedImage
+        cell.imageView?.image = self.memes[(indexPath as NSIndexPath).row].editedImage
         
         return cell
     }

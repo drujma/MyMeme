@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--My Memes-->
         <scene sceneID="IRs-CE-P5Z">
             <objects>
                 <tableViewController id="wLf-Yb-iGg" customClass="TableViewController" customModule="Meme" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,11 +28,11 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="wLf-Yb-iGg" id="CDN-dE-3vc"/>
-                            <outlet property="delegate" destination="wLf-Yb-iGg" id="Nb7-dQ-zAV"/>
+                            <outlet property="dataSource" destination="wLf-Yb-iGg" id="LBS-M1-eJg"/>
+                            <outlet property="delegate" destination="wLf-Yb-iGg" id="9vC-5i-5G2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="E1d-xW-hpT"/>
+                    <navigationItem key="navigationItem" title="My Memes" id="E1d-xW-hpT"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4a-M4-gjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

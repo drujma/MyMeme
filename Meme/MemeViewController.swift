@@ -39,6 +39,7 @@ class MemeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(MemeViewController.keyboarHidden(_:)), name: .UIKeyboardWillHide, object: nil)
         
         self.tabBarController!.tabBar.isHidden = true
+        self.navigationController!.navigationBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,18 +70,15 @@ class MemeViewController: UIViewController {
             activityController.completionWithItemsHandler = { activity, success, items, error in
                 
                 if success {
+                    print("Success")
                     let meme = Meme(originalImage: image, editedImage: memeImage, top: self.top.text!, bottom: self.bottom.text!)
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.memes.append(meme)
                     
-                    self.navigationController!.popViewController(animated: true)
+                    self.navigationController!.popToRootViewController(animated: true)
                 }
             }
-            
-            
             self.present(activityController, animated: true, completion: nil)
-        }else{
-            print("Image is nil")
         }
     }
 
